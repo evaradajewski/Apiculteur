@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scable=no">
+        <title>{% block title %}Home{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="stylesheet" href="{{ asset('dist/css/bootstrap.min.css') }}" />
+        <script src="{{ asset('dist/js/jquery.min.js') }}"></script>
+        <script src="{{ asset('dist/js/bootstrap.min.js') }}"></script>
+
+    <style type="text/css">
+        nav {
+            font: bold 16px Batang, arial, serif;
+            list-style-type: none;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #9EA0A1;
+            margin-left: 0;
+        }
+
+        li
+        {
+            float : left;
+            height : 21px;
+            background-color: #F4F9FD;
+            margin : 2px 2px 0 2px !important;
+            margin : 1px 2px 0 2px;
+            border : 1px solid #9EA0A1;
+        }
+
+        a
+        {
+            display : block;
+            color : #9EA0A1;
+            text-decoration : none;
+            padding : 4px;
+        }
+
+        ul{
+            list-style:none;
+        }
+
+    </style>
+
+
+    </head>
+
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    <li><a href="/web/app_dev.php">Home</a></li>
+                    <li><a href="/web/app_dev.php/apiculteur">Apiculteur</a></li>
+                    <li><a href="/web/app_dev.php/login">Compte</a></li>
+                </ul>
+            </div>
+
+        </nav>
+
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
