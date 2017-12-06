@@ -1,5 +1,7 @@
 {% extends 'base.html.twig' %}
 
+
+
 {% block body %}
     </br>
     <table border="1">
@@ -7,11 +9,16 @@
             <th>Nom Ruche</th>
             <th>Latitude</th>
             <th>Longitude</th>
+            <th>
+                <a target="_blank" href="ajoutruche" onclick="window.open(this.href, 'Titre','target=_parent, height=350, width=550, top=200, ' +
+     'left=200, color=black, toolbar=no, menubar=no, location=no, resizable=no, scrollbars=no, status=no'); return false" style="font-size: 20px">+</a>
+            </th>
         </tr>
 
     </table>
 
-{% endblock %}
+        {% endblock %}
+
 
 {% block stylesheets %}
 <style>
