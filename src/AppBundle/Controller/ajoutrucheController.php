@@ -14,9 +14,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-use Symfony\Component\Form\Extension\Core\Type\FormType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\HttpFoundation\Response;
 
 class ajoutrucheController extends Controller
 {
@@ -29,6 +27,17 @@ class ajoutrucheController extends Controller
         $ruche = new ruche();
 
         $form = $this->createForm(rucheType::class, $ruche);
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted())
+        {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($ruche);
+            $em->flush();
+
+            return new Response('ruche inséré !');
+        }
 
         $formView = $form->createView();
 

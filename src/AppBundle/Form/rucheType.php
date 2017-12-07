@@ -5,6 +5,7 @@ namespace AppBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class rucheType extends AbstractType
 {
@@ -15,7 +16,8 @@ class rucheType extends AbstractType
     {
         $builder->add('nomRuche')
             ->add('latitude')
-            ->add('longitude');
+            ->add('longitude')
+        ->add('ajouter',      SubmitType::class);
     }
     
     /**
