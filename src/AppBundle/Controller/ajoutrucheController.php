@@ -13,7 +13,6 @@ use AppBundle\Form\rucheType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-
 use Symfony\Component\HttpFoundation\Response;
 
 class ajoutrucheController extends Controller
@@ -41,7 +40,6 @@ class ajoutrucheController extends Controller
 
         $formView = $form->createView();
 
-        // replace this example code with whatever you need
         return $this->render('ajout/ajoutruche.html.twig', array('form' => $formView));
     }
 }

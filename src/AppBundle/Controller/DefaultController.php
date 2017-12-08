@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\ruche;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -12,33 +13,20 @@ class DefaultController extends Controller
     /**
      * @Route("/", name="homepage")
      */
-    public function indexAction(Request $request)
-    {
-        // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-        ]);
-    }
-
-    public function afficheAction($id)
+    public function indexAction(ruche $ruche = null)
     {
         $repository = $this->getDoctrine()
-            ->getManager()
-            ->getRepository('AppBundle:ruche')
-        ;
+            ->getEntityManager()
+            ->getRepository('AppBundle:ruche');
 
-        // On récupère l'entité correspondante à l'id $id
-        $advert = $repository->find($id);
+        $liste_ruche = $repository->findAll($ruche);
 
-        // $advert est donc une instance de OC\PlatformBundle\Entity\Advert
-        // ou null si l'id $id  n'existe pas, d'où ce if :
-        if (null === $advert) {
-            throw new NotFoundHttpException("L'annonce d'id ".$id." n'existe pas.");
-        }
+//        if ($ruche !== null) {
+//            $liste_ruche = $repository->findAll($ruche);
+//        } else {
+//            $liste_ruche = array();
+//        }
 
-        // Le render ne change pas, on passait avant un tableau, maintenant un objet
-        return $this->render('default/index.html.twig', array(
-            'advert' => $advert
-        ));
+        return $this->render('default/index.html.twig', array('liste_ruche' => $liste_ruche));
     }
 }
