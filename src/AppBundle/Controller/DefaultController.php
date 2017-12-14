@@ -21,12 +21,6 @@ class DefaultController extends Controller
 
         $liste_ruche = $repository->findAll($ruche);
 
-//        if ($ruche !== null) {
-//            $liste_ruche = $repository->findAll($ruche);
-//        } else {
-//            $liste_ruche = array();
-//        }
-
         return $this->render('default/index.html.twig', array('liste_ruche' => $liste_ruche));
     }
 }

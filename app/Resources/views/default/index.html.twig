@@ -5,16 +5,25 @@
 {% block body %}
     </br>
 
+    <button> <a target="_blank" href="app_dev.php/ajoutruche" onclick="window.open(this.href, 'Titre','target=_parent, height=350, width=550, top=200, ' +
+                    'left=200, color=black, toolbar=no, menubar=no, location=no, resizable=no, scrollbars=no, status=no'); return false" style="font-size: 12px">
+        Ajouter ruche
+        </a> </button>
+
+    <button> <a target="_blank" href="app_dev.php/intervention" onclick="window.open(this.href, 'Titre','target=_parent, height=350, width=550, top=200, ' +
+                    'left=200, color=black, toolbar=no, menubar=no, location=no, resizable=no, scrollbars=no, status=no'); return false" style="font-size: 12px">
+            Ajouter intervention
+        </a> </button>
+
+    </br> </br>
+
     <table border="1">
         <thead>
             <tr>
                 <th>Nom Ruche</th>
                 <th>Latitude</th>
                 <th>Longitude</th>
-                <th>
-                    <a target="_blank" href="app_dev.php/ajoutruche" onclick="window.open(this.href, 'Titre','target=_parent, height=350, width=550, top=200, ' +
-                    'left=200, color=black, toolbar=no, menubar=no, location=no, resizable=no, scrollbars=no, status=no'); return false" style="font-size: 20px">+</a>
-                </th>
+
             </tr>
         </thead>
 
@@ -24,10 +33,19 @@
                 <td>{{ ruche.nomRuche }}</td>
                 <td>{{ ruche.latitude }}</td>
                 <td>{{ ruche.longitude }}</td>
-                <td></td>
+
+                <td>
+                    <button> <a target="_blank" href="app_dev.php/inforuche/{{ ruche.id }}" onclick="window.open(this.href, 'Titre','target=_parent, height=350, width=550, top=200, ' +
+                    'left=200, color=black, toolbar=no, menubar=no, location=no, resizable=no, scrollbars=no, status=no'); return false" style="font-size: 12px">
+                            liste intervention
+                        </a> </button>
+                </td>
+
+                <td>Production</td>
+                <td>Supprimer</td>
             </tr>
         {% else %}
-            <tr><td colspan="8">Aucune rencontre trouvée...</td></tr>
+            <tr><td colspan="8">Aucune ruche</td></tr>
         {% endfor %}
         </tbody>
 
@@ -42,7 +60,6 @@
 {% block stylesheets %}
 <style>
     table{
-        margin:auto;
         border-color:yellow;
     }
 

@@ -7,16 +7,16 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
-class rucheType extends AbstractType
+class interventionType extends AbstractType
 {
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nomRuche')
-            ->add('latitude')
-            ->add('longitude')
+        $builder->add('date')
+            ->add('texte')
+            ->add('idruche')
             ->add('ajouter',      SubmitType::class);
     }
     
@@ -26,7 +26,7 @@ class rucheType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\ruche'
+            'data_class' => 'AppBundle\Entity\intervention'
         ));
     }
 
@@ -35,7 +35,7 @@ class rucheType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'appbundle_ruche';
+        return 'appbundle_intervention';
     }
 
 
