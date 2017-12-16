@@ -1,0 +1,31 @@
+{% block body %}
+
+    <h2> Ajouter une récolte : </h2>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+
+{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        /*body { background-image: image() ; }*/
+
+    </style>
+{% endblock %}
+
+{% block javascripts %}
+
+    <script>
+
+        $("form input.date").datetimepicker({
+            dateFormat: "dd/mm/yy",
+            stepMinute: 10,
+            useLocalTimezone: true,
+
+        });
+
+    </script>
+
+{% endblock %}

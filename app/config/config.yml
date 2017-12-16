@@ -78,3 +78,5 @@ fos_user:
         address: "test@test.fr"
         sender_name: "test"
 
+cmen_google_charts:
+    version: "current"

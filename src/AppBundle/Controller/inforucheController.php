@@ -22,20 +22,11 @@ class inforucheController extends Controller
     /**
      * @Route("/inforuche/{id}", name="inforucheid")
      */
-    public function idAction($id, intervention $intervention = null)
+    public function idAction($id)
     {
         $liste_intervention = $this->getDoctrine()
             -> getRepository('AppBundle:intervention')
             -> findByIdruche($id);
-
-        /*$repository = $this->getDoctrine()
-            ->getEntityManager()
-            ->getRepository('AppBundle:intervention');
-
-        $liste_intervention = $repository->findAll($intervention);*/
-
-
-        //return new Response($liste_intervention->getTexte());
 
         return $this->render('info/inforuche.html.twig', array('liste_intervention' => $liste_intervention));
     }

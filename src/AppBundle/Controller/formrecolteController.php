@@ -2,37 +2,36 @@
 /**
  * Created by PhpStorm.
  * User: eva
- * Date: 06/12/2017
- * Time: 16:48
+ * Date: 14/12/2017
+ * Time: 18:28
  */
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\ruche;
-use AppBundle\Form\rucheType;
+use AppBundle\Entity\recolte;
+use AppBundle\Form\recolteType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class ajoutrucheController extends Controller
+class formrecolteController extends Controller
 {
     /**
-     * @Route("/ajoutruche", name="ajoutruche")
+     * @Route("/recolte", name="recolte")
      */
-
     public function indexAction(Request $request)
     {
-        $ruche = new ruche();
+        $recolte = new recolte();
 
-        $form = $this->createForm(rucheType::class, $ruche);
+        $form = $this->createForm(recolteType::class, $recolte);
 
         $form->handleRequest($request);
 
         if($form->isSubmitted())
         {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($ruche);
+            $em->persist($recolte);
             $em->flush();
 
             return new Response('recolte inséré !');
@@ -40,6 +39,6 @@ class ajoutrucheController extends Controller
 
         $formView = $form->createView();
 
-        return $this->render('ajout/ajoutruche.html.twig', array('form' => $formView));
+        return $this->render('recolte/formrecolte.html.twig', array('form' => $formView));
     }
 }

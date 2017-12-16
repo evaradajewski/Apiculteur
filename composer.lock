@@ -4,9 +4,97 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d228f99f23a18159c578efcf9f3c7854",
-    "content-hash": "ca7cc4f1392564f1021d7cb7b1323dd7",
+    "hash": "d94e9b4e401524e5902e46d3ef62f07a",
+    "content-hash": "174119e537dc7b131ab14c25db2fb8ac",
     "packages": [
+        {
+            "name": "cmen/google-charts-bundle",
+            "version": "2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cmen/CMENGoogleChartsBundle.git",
+                "reference": "e6b57e6082a67e8fbe8036708366330bfa630a81"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cmen/CMENGoogleChartsBundle/zipball/e6b57e6082a67e8fbe8036708366330bfa630a81",
+                "reference": "e6b57e6082a67e8fbe8036708366330bfa630a81",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/framework-bundle": "^2.3 || ^3.0 || ^4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "CMEN\\GoogleChartsBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christophe Meneses"
+                }
+            ],
+            "description": "This Bundle provides a Twig extension and PHP objects to display Google charts in your Symfony application.",
+            "keywords": [
+                "chart",
+                "charts",
+                "google",
+                "graph",
+                "graphs",
+                "map"
+            ],
+            "time": "2017-11-21 15:06:27"
+        },
+        {
+            "name": "components/jquery",
+            "version": "3.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/components/jquery.git",
+                "reference": "e5534d4ab8e80c159553d507e358ed20a806d3bf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/components/jquery/zipball/e5534d4ab8e80c159553d507e358ed20a806d3bf",
+                "reference": "e5534d4ab8e80c159553d507e358ed20a806d3bf",
+                "shasum": ""
+            },
+            "type": "component",
+            "extra": {
+                "component": {
+                    "scripts": [
+                        "jquery.js"
+                    ],
+                    "files": [
+                        "jquery.min.js",
+                        "jquery.min.map",
+                        "jquery.slim.js",
+                        "jquery.slim.min.js",
+                        "jquery.slim.min.map"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "JS Foundation and other contributors"
+                }
+            ],
+            "description": "jQuery JavaScript Library",
+            "homepage": "http://jquery.com",
+            "time": "2017-03-21 07:01:49"
+        },
         {
             "name": "composer/ca-bundle",
             "version": "1.0.8",
@@ -1146,6 +1234,68 @@
             "time": "2017-06-19 01:22:40"
         },
         {
+            "name": "oyejorge/less.php",
+            "version": "v1.7.0.14",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/oyejorge/less.php.git",
+                "reference": "42925c5a01a07d67ca7e82dfc8fb31814d557bc9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/oyejorge/less.php/zipball/42925c5a01a07d67ca7e82dfc8fb31814d557bc9",
+                "reference": "42925c5a01a07d67ca7e82dfc8fb31814d557bc9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8.24"
+            },
+            "bin": [
+                "bin/lessc"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Less": "lib/"
+                },
+                "classmap": [
+                    "lessc.inc.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Matt Agar",
+                    "homepage": "https://github.com/agar"
+                },
+                {
+                    "name": "Martin Jantošovič",
+                    "homepage": "https://github.com/Mordred"
+                },
+                {
+                    "name": "Josh Schmidt",
+                    "homepage": "https://github.com/oyejorge"
+                }
+            ],
+            "description": "PHP port of the Javascript version of LESS http://lesscss.org (Originally maintained by Josh Schmidt)",
+            "homepage": "http://lessphp.gpeasy.com",
+            "keywords": [
+                "css",
+                "less",
+                "less.js",
+                "lesscss",
+                "php",
+                "stylesheet"
+            ],
+            "time": "2017-03-28 22:19:25"
+        },
+        {
             "name": "paragonie/random_compat",
             "version": "v2.0.11",
             "source": {
@@ -2267,6 +2417,57 @@
                 "framework"
             ],
             "time": "2017-10-05 23:40:32"
+        },
+        {
+            "name": "twbs/bootstrap",
+            "version": "v3.3.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twbs/bootstrap.git",
+                "reference": "0b9c4a4007c44201dce9a6cc1a38407005c26c86"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/0b9c4a4007c44201dce9a6cc1a38407005c26c86",
+                "reference": "0b9c4a4007c44201dce9a6cc1a38407005c26c86",
+                "shasum": ""
+            },
+            "replace": {
+                "twitter/bootstrap": "self.version"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.3.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jacob Thornton",
+                    "email": "jacobthornton@gmail.com"
+                },
+                {
+                    "name": "Mark Otto",
+                    "email": "markdotto@gmail.com"
+                }
+            ],
+            "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
+            "homepage": "http://getbootstrap.com",
+            "keywords": [
+                "JS",
+                "css",
+                "framework",
+                "front-end",
+                "less",
+                "mobile-first",
+                "responsive",
+                "web"
+            ],
+            "time": "2016-07-25 15:51:55"
         },
         {
             "name": "twig/twig",
