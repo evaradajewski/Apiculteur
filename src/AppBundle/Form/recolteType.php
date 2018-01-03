@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class recolteType extends AbstractType
 {
@@ -17,7 +18,11 @@ class recolteType extends AbstractType
     {
         $builder->add('date')
             ->add('poid')
-            ->add('idruche')
+            ->add('idruche', EntityType::class,
+                array ('class' => 'AppBundle:ruche',
+                    'choice_label' => 'nomRuche',
+                    'choice_value' => 'id',
+                ))
             ->add('ajouter',      SubmitType::class);
     }
     

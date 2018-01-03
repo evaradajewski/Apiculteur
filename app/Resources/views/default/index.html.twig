@@ -49,7 +49,11 @@
                             Production
                         </a> </button>
                 </td>
-                <td>Supprimer</td>
+                <td><button> <a target="_blank" href="supp/{{ ruche.id }}" onclick="window.open(this.href, 'Titre','target=_parent, height=350, width=550, top=200, ' +
+                    'left=200, color=black, toolbar=no, menubar=no, location=no, resizable=no, scrollbars=no, status=no'); return false" style="font-size: 12px">
+                            Supprimer
+                        </a> </button>
+                </td>
             </tr>
         {% else %}
             <tr><td colspan="8">Aucune ruche</td></tr>

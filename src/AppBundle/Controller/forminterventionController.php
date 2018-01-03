@@ -19,13 +19,11 @@ use Symfony\Component\HttpFoundation\Response;
 class forminterventionController extends Controller
 {
     /**
-     * @Route("/intervention", name="intervention")
+     * @Route("/inforuche/intervention", name="intervention")
      */
     public function indexAction(Request $request)
     {
         $intervention = new intervention();
-
-
 
 
         $form = $this->createForm(interventionType::class, $intervention);
