@@ -22,13 +22,18 @@ class inforucheController extends Controller
     /**
      * @Route("/inforuche/{id}", name="inforucheid")
      */
-    public function idAction($id)
+    public function idAction(Request $request, $id)
     {
-        $liste_intervention = $this->getDoctrine()
+        $liste = $this->getDoctrine()
             -> getRepository('AppBundle:intervention')
             -> findByIdruche($id);
+        $liste_intervention  = $this->get('knp_paginator')->paginate(
+            $liste,
+            $request->query->get('page', 1)/*le numéro de la page à afficher*/,
+            10/*nbre d'éléments par page*/
+        );
 
-        return $this->render('info/inforuche.html.twig', array('liste_intervention' => $liste_intervention));
+        return $this->render('info/inforuche.html.twig', array('liste_intervention' => $liste_intervention, 'id' => $id));
     }
 
 }
