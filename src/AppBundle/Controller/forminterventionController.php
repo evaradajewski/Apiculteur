@@ -24,6 +24,7 @@ class forminterventionController extends Controller
     public function indexAction(Request $request, $id)
     {
         $intervention = new intervention();
+        $intervention->setIdruche($id);
 
         $form = $this->createForm(interventionType::class, $intervention);
 

@@ -16,7 +16,7 @@ class interventionType extends AbstractType
     {
         $builder->add('date')
             ->add('texte')
-            ->add('idruche')
+            //->add('idruche')
             ->add('ajouter',      SubmitType::class);
     }
     
