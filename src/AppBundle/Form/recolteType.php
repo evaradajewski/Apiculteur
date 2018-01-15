@@ -18,11 +18,7 @@ class recolteType extends AbstractType
     {
         $builder->add('date')
             ->add('poid')
-            ->add('idruche', EntityType::class,
-                array ('class' => 'AppBundle:ruche',
-                    'choice_label' => 'nomRuche',
-                    'choice_value' => 'id',
-                ))
+            //->add('idruche')
             ->add('ajouter',      SubmitType::class);
     }
     

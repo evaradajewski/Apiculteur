@@ -3,6 +3,7 @@
 
 
 {% block body %}
+    <div class="container">
     </br>
 
     <button> <a target="_blank" href="ajoutruche" onclick="window.open(this.href, 'Titre','target=_parent, height=350, width=550, top=200, ' +
@@ -10,19 +11,10 @@
         Ajouter ruche
         </a> </button>
 
-    <button> <a target="_blank" href="intervention" onclick="window.open(this.href, 'Titre','target=_parent, height=350, width=550, top=200, ' +
-                    'left=200, color=black, toolbar=no, menubar=no, location=no, resizable=no, scrollbars=no, status=no'); return false" style="font-size: 12px">
-            Ajouter intervention
-        </a> </button>
-
-    <button> <a target="_blank" href="recolte" onclick="window.open(this.href, 'Titre','target=_parent, height=350, width=550, top=200, ' +
-                    'left=200, color=black, toolbar=no, menubar=no, location=no, resizable=no, scrollbars=no, status=no'); return false" style="font-size: 12px">
-            Ajouter récolte
-        </a> </button>
 
     </br> </br>
 
-    <table border="1">
+    <table class="table table-striped">
             <tr>
                 <th>Nom Ruche</th>
                 <th>Latitude</th>
@@ -61,6 +53,8 @@
 
     </table>
     <div class="text-center">{{ knp_pagination_render(liste_ruche) }}</div>
+
+    </div>
 
         {% endblock %}
 

@@ -28,6 +28,6 @@ class recolteController extends Controller
             -> getRepository('AppBundle:recolte')
             -> findByIdruche($id);
 
-        return $this->render('recolte/production.html.twig', array('liste_recolte' => $liste_recolte));
+        return $this->render('recolte/production.html.twig', array('liste_recolte' => $liste_recolte, 'id' => $id));
     }
 }

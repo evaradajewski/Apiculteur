@@ -15,6 +15,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Doctrine\ORM\EntityManager;
 use AppBundle\Entity\ruche;
+use AppBundle\Entity\intervention;
+use AppBundle\Entity\recolte;
 
 class suppressionrucheController extends Controller
 {
@@ -30,6 +32,21 @@ class suppressionrucheController extends Controller
         $ruche = $em->getRepository('AppBundle:ruche')->find($id);
         $em->remove($ruche);
         $em->flush();
+
+        $idruche = $id;
+
+        $recolte = $em->getRepository('AppBundle:recolte')->find($idruche);
+        if(!$recolte)
+        {
+            $em->remove($recolte);
+            $em->flush();
+        }
+
+        $intervention = $em->getRepository('AppBundle:intervention')->find($idruche);
+        if(!$intervention) {
+            $em->remove($intervention);
+            $em->flush();
+        }
 
         return new Response('Ruche supprimée !');
     }

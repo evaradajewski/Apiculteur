@@ -18,11 +18,12 @@ use Symfony\Component\HttpFoundation\Response;
 class formrecolteController extends Controller
 {
     /**
-     * @Route("/recolte", name="recolte")
+     * @Route("inforecolte/recolte/{id}", name="recolte")
      */
-    public function indexAction(Request $request)
+    public function indexAction(Request $request, $id)
     {
         $recolte = new recolte();
+        $recolte->setIdruche($id);
 
         $form = $this->createForm(recolteType::class, $recolte);
 
